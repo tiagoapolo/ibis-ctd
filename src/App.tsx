@@ -1,19 +1,13 @@
-// import "./App.css";
-import { useState } from "react";
-import { TodoItem } from "./components/TodoItem";
+import { AddTodoForm } from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
 
 function App() {
-  const [checked, setChecked] = useState(false);
-
   return (
     <>
-      <TodoItem
-        checked={checked}
-        onCheck={(updatedCheckValue) => {
-          setChecked(updatedCheckValue);
-        }}
-        text="do my homework"
-      />
+      <h1>Todo List</h1>
+      <AddTodoForm />
+      <hr />
+      <TodoList />
     </>
   );
 }
