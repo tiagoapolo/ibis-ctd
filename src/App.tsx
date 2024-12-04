@@ -1,17 +1,16 @@
-import { useState } from "react";
 import { AddTodoForm } from "./components/AddTodoForm";
 import TodoList from "./components/TodoList";
+import useSemiPersistentState from "./hooks/useSemiPersistentState";
 
 function App() {
-  const [newTodoItem, setNewTodoItem] = useState("");
+  const { todoList, setTodoList } = useSemiPersistentState();
 
   return (
     <>
       <h1>Todo List</h1>
-      <AddTodoForm onAddTodo={(title) => setNewTodoItem(title)} />
-      <p>{newTodoItem}</p>
+      <AddTodoForm onAddTodo={setTodoList} />
       <hr />
-      <TodoList />
+      <TodoList todoList={todoList ?? []} />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import TodoListItem from "./TodoListItem";
 
 const todoList = [
@@ -15,7 +16,10 @@ const todoList = [
   },
 ];
 
-const TodoList = () => {
+type Todo = { title: string; id: number };
+type TodoList = Todo[];
+
+const TodoList = ({ todoList }: { todoList: TodoList }) => {
   return (
     <ul className="todoList">
       {todoList.map(({ title, id }) => (
