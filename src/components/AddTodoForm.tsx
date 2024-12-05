@@ -13,7 +13,7 @@ const AddTodoForm = ({ onAddTodo }: AddTodoFormProps) => {
     }
 
     onAddTodo(titleValue);
-    form.title.value = "";
+    form.reset();
   };
 
   return (
